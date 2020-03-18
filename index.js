@@ -1,6 +1,9 @@
+// Read in your .env file
 require("dotenv").config();
+// HTTP request library
 const axios = require("axios")
 
+// Set up request options
 const options = {
     responseType: "json",
     headers: {
@@ -14,7 +17,9 @@ const options = {
 }
 
 const getData = async () => {
+    // Make request to Monday.com API
     const response = await axios.get("https://api.monday.com/v2/", options);
+    
     console.log(response.data.data);
     return;
 } 
